@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Instagram UI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+      border-bottom: 1px solid #dbdbdb;
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-icons span {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    /* Stories */
+    .stories {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+      background: white;
+      border-bottom: 1px solid #dbdbdb;
+    }
+
+    .story {
+      text-align: center;
+      margin-right: 15px;
+    }
+
+    .story img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #ff8501;
+    }
+
+    .story p {
+      font-size: 12px;
+    }
+
+    /* Feed */
+    .feed {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .post {
+      background: white;
+      border: 1px solid #dbdbdb;
+      margin-bottom: 20px;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .post-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .post img {
+      width: 100%;
+    }
+
+    .post-actions {
+      padding: 10px;
+    }
+
+    .post-actions span {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .caption {
+      padding: 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">InstaClone</div>
+    <div class="nav-icons">
+      <span>🏠</span>
+      <span>💬</span>
+      <span>➕</span>
+      <span>❤️</span>
+    </div>
+  </div>
+
+  <!-- Stories -->
+  <div class="stories">
+    <div class="story">
+      <img src="https://i.pravatar.cc/60?img=1">
+      <p>user1</p>
+    </div>
+    <div class="story">
+      <img src="https://i.pravatar.cc/60?img=2">
+      <p>user2</p>
+    </div>
+    <div class="story">
+      <img src="https://i.pravatar.cc/60?img=3">
+      <p>user3</p>
+    </div>
+    <div class="story">
+      <img src="https://i.pravatar.cc/60?img=4">
+      <p>user4</p>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <div class="feed">
+
+    <div class="post">
+      <div class="post-header">
+        <img src="https://i.pravatar.cc/40?img=5">
+        <strong>user5</strong>
+      </div>
+      <img src="https://picsum.photos/500/300">
+      <div class="post-actions">
+        <span>❤️</span>
+        <span>💬</span>
+        <span>📤</span>
+      </div>
+      <div class="caption">
+        <strong>user5</strong> Beautiful day! 🌅
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <img src="https://i.pravatar.cc/40?img=6">
+        <strong>user6</strong>
+      </div>
+      <img src="https://picsum.photos/500/301">
+      <div class="post-actions">
+        <span>❤️</span>
+        <span>💬</span>
+        <span>📤</span>
+      </div>
+      <div class="caption">
+        <strong>user6</strong> Loving this vibe 😎
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

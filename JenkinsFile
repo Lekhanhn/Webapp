@@ -18,6 +18,12 @@ pipeline{
             }
          }
 
+         stage('Containerisation'){
+            steps{
+                sh "docker run -it -d --name c1 -p 9001:80 $DOCKER_IMAGE"
+            }
+         }
+
          stage("Login to Docker hub"){
             steps{
                 scripts{

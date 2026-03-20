@@ -24,16 +24,21 @@ pipeline{
             }
          }
 
-         stage("Login to Docker hub"){
-            steps{
-                scripts{
-                    withCredentials([usernameColonPassword(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_USERNAME'), usernameColonPassword(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_PASSWORD')]) {
-                                    // some block
-                            }
-
+         stage("Login to Docker Hub") {
+            steps {
+                script {
+                    withCredentials([usernamePassword(
+                    credentialsId: 'docker-hub-credentials',
+                    usernameVariable: 'DOCKER_USERNAME',
+                    passwordVariable: 'DOCKER_PASSWORD'
+                    )]) {
+                sh """
+                echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+                """
             }
-
-         }
+        }
+    }
+}
 
          stage("Push to docker hub"){
             steps{

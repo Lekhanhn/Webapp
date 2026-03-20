@@ -9,7 +9,7 @@ RUN rm -rf /var/www/html/*
 
 COPY index.html /var/www/html/
 
-EXPOSE 80
+EXPOSE 8080
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]

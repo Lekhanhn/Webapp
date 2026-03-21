@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment{
-        DOCKER_IMAGE='lekhanhn1/cicd'
+        DOCKER_IMAGE='lekhanhn1/task2'
     }
 
      stages{
@@ -20,7 +20,7 @@ pipeline{
 
          stage('Containerisation'){
             steps{
-                sh "docker run -it -d --name c1 -p 9001:80 $DOCKER_IMAGE"
+                sh "docker run -it -d --name c1 -p 9002:80 $DOCKER_IMAGE"
             }
          }
 

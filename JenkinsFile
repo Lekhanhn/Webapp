@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     environment{
-        DOCKER_IMAGE='lekhanhn1/task2'
+        DOCKER_IMAGE=credentials('DOCKER_IMAGE')
     }
 
      stages{

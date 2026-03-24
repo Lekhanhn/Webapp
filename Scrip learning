@@ -1,0 +1,23 @@
+#!/bin/bash
+#Check if service is running
+
+SERVICE="nginx"
+
+if systemctl is-active --quiet $SERVICE
+then
+        echo "$SERVICE is running"
+else
+        echo "$SERVICE is not running"
+fi
+
+
+#Disk usage
+THRESHOLD=20
+USAGE=$(df / | grep / | awk '{print $5}' | sed 's/%//g')
+
+if [ $USAGE -gt $THRESHOLD ]
+then
+        echo "Disk usage is greater than threshold= $USAGE"
+else
+        echo "Disk usage is  less than threshold= $USAGE"
+fi
